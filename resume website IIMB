@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Palak Kulhariya — Creative Business &amp; Strategy Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,800;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --blue: #D5E8E6;
+      --cream: #FFF3E3;
+      --coral: #FF7171;
+      --ink: #1A1D1E;
+      --muted: #4A5255;
+      --border: #1A1D1E;
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 28px;
+      --shadow-hard: 5px 5px 0px var(--ink);
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--cream);
+      color: var(--ink);
+      font-family: var(--font-body);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(255, 243, 227, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--border);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+      position: relative;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-monogram {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background-color: var(--blue);
+      border: 2px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      font-weight: 800;
+      transition: transform 0.25s ease, background-color 0.25s ease;
+    }
+
+    .brand:hover .brand-monogram {
+      background-color: var(--coral);
+      transform: rotate(-8deg);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      font-size: 0.92rem;
+      font-weight: 600;
+      position: relative;
+      padding: 0.25rem 0;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0%;
+      height: 2.5px;
+      background-color: var(--coral);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      background-color: var(--coral);
+      color: var(--ink);
+      border: 2px solid var(--border);
+      padding: 0.5rem 1.15rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      box-shadow: 3px 3px 0px var(--ink);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .nav-cta::after {
+      display: none !important;
+    }
+
+    .nav-cta:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 5px 0px var(--ink);
+    }
+
+    .nav-checkbox {
+      display: none;
+    }
+
+    .menu-toggle-label {
+      display: none;
+      background: var(--blue);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.45rem 0.85rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .menu-toggle-label .label-close {
+      display: none;
+    }
+
+    .nav-checkbox:checked ~ .menu-toggle-label .label-open {
+      display: none;
+    }
+
+    .nav-checkbox:checked ~ .menu-toggle-label .label-close {
+      display: inline;
+    }
+
+    section {
+      padding: 5.5rem 0;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      border: 1.5px solid var(--border);
+      margin-bottom: 1.15rem;
+    }
+
+    .kicker-blue { background-color: var(--blue); }
+    .kicker-cream { background-color: var(--cream); }
+    .kicker-coral { background-color: var(--coral); }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero {
+      background-color: var(--cream);
+      position: relative;
+      padding: 5rem 0 6rem;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      background-color: var(--blue);
+      border: 2px solid var(--border);
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      box-shadow: 3px 3px 0px var(--ink);
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.85rem, 6vw, 4.75rem);
+      font-weight: 800;
+      line-height: 1.03;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title span.highlight {
+      display: inline-block;
+      background-color: var(--coral);
+      padding: 0 0.45rem;
+      border-radius: 10px;
+      border: 2px solid var(--border);
+      transform: rotate(-1deg);
+    }
+
+    .hero-lead {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin-bottom: 2.25rem;
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn-primary, .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--ink);
+      font-weight: 700;
+      padding: 0.9rem 1.75rem;
+      border-radius: 999px;
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow-hard);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-primary { background-color: var(--coral); }
+    .btn-secondary { background-color: var(--blue); }
+
+    .btn-primary:hover, .btn-secondary:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0px var(--ink);
+    }
+
+    .hero-card {
+      background-color: var(--blue);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: 8px 8px 0px var(--ink);
+      position: relative;
+    }
+
+    .hero-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.25rem;
+      border-bottom: 2px dashed var(--border);
+      margin-bottom: 1.25rem;
+    }
+
+    .dossier-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .hero-card-row {
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-card-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .row-key {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .row-val {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .focus-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.35rem;
+    }
+
+    .focus-pill {
+      background-color: var(--cream);
+      border: 1.5px solid var(--border);
+      border-radius: 999px;
+      padding: 0.22rem 0.7rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .about-section {
+      background-color: var(--blue);
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .about-narrative {
+      font-size: 1.08rem;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+    }
+
+    .about-highlight-box {
+      background-color: var(--cream);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-hard);
+      margin-top: 1.75rem;
+    }
+
+    .about-highlight-box p {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .pillar-card {
+      background-color: var(--cream);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+      transition: transform 0.2s ease;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .pillar-num {
+      display: inline-block;
+      background-color: var(--coral);
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      padding: 0.1rem 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 800;
+      margin-bottom: 0.65rem;
+    }
+
+    .pillar-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.08rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .pillar-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .education-section {
+      background-color: var(--cream);
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 820px;
+      margin-top: 2.5rem;
+      padding-left: 2.25rem;
+      border-left: 3px solid var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.25rem;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -2.95rem;
+      top: 1.4rem;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: var(--coral);
+      border: 3px solid var(--border);
+    }
+
+    .timeline-item:nth-child(2) .timeline-dot {
+      background-color: var(--blue);
+    }
+
+    .edu-card {
+      background-color: var(--blue);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.85rem 2rem;
+      box-shadow: var(--shadow-hard);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .timeline-item:nth-child(2) .edu-card {
+      background-color: var(--cream);
+    }
+
+    .edu-badge {
+      background-color: var(--coral);
+      border: 1.5px solid var(--border);
+      border-radius: 999px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .edu-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .edu-degree {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .edu-meta {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .certifications-section {
+      background-color: var(--blue);
+    }
+
+    .cert-header {
+      max-width: 680px;
+      margin-bottom: 2.75rem;
+    }
+
+    .cert-header p {
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+    }
+
+    .cert-card {
+      background-color: var(--cream);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-hard);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .cert-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 8px 8px 0px var(--ink);
+    }
+
+    .cert-card.featured-cert {
+      grid-column: 1 / -1;
+    }
+
+    .cert-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .cert-org {
+      display: inline-block;
+      background-color: var(--blue);
+      border: 1.5px solid var(--border);
+      border-radius: 999px;
+      padding: 0.25rem 0.8rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .cert-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .cert-grade {
+      background-color: var(--coral);
+      border: 1.5px solid var(--border);
+      border-radius: 999px;
+      padding: 0.25rem 0.8rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .cert-date {
+      background-color: var(--cream);
+      border: 1.5px solid var(--border);
+      border-radius: 999px;
+      padding: 0.25rem 0.8rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .cert-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      line-height: 1.25;
+    }
+
+    .cert-suborg {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 0.85rem;
+    }
+
+    .cert-desc {
+      font-size: 0.95rem;
+      color: var(--ink);
+      margin-bottom: 1.15rem;
+    }
+
+    .cert-areas-label {
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .cert-areas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .cert-area-pill {
+      background-color: var(--blue);
+      border: 1.5px solid var(--border);
+      border-radius: 999px;
+      padding: 0.28rem 0.8rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .projects-section {
+      background-color: var(--cream);
+    }
+
+    .projects-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .filter-radio {
+      display: none;
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .filter-label {
+      background-color: var(--cream);
+      border: 2px solid var(--border);
+      border-radius: 999px;
+      padding: 0.45rem 1.05rem;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .filter-label:hover {
+      background-color: var(--blue);
+    }
+
+    #filter-all:checked ~ .filter-bar label[for="filter-all"],
+    #filter-venture:checked ~ .filter-bar label[for="filter-venture"],
+    #filter-research:checked ~ .filter-bar label[for="filter-research"],
+    #filter-b2b:checked ~ .filter-bar label[for="filter-b2b"],
+    #filter-marketing:checked ~ .filter-bar label[for="filter-marketing"] {
+      background-color: var(--coral);
+      box-shadow: 3px 3px 0px var(--ink);
+    }
+
+    #filter-venture:checked ~ .projects-grid .project-card:not([data-category="venture"]),
+    #filter-research:checked ~ .projects-grid .project-card:not([data-category="research"]),
+    #filter-b2b:checked ~ .projects-grid .project-card:not([data-category="b2b"]),
+    #filter-marketing:checked ~ .projects-grid .project-card:not([data-category="marketing"]) {
+      display: none;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+    }
+
+    .project-card {
+      background-color: var(--cream);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-hard);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .project-card:nth-child(even) {
+      background-color: var(--blue);
+    }
+
+    .project-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 8px 8px 0px var(--ink);
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.15rem;
+    }
+
+    .project-index {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 800;
+      background-color: var(--coral);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 0.2rem 0.65rem;
+    }
+
+    .project-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      border: 1.5px solid var(--border);
+      background-color: var(--cream);
+    }
+
+    .project-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-summary {
+      font-size: 0.96rem;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+    }
+
+    .project-bullets {
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .project-bullets li {
+      font-size: 0.88rem;
+      color: var(--muted);
+      padding-left: 1.15rem;
+      position: relative;
+    }
+
+    .project-bullets li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: var(--coral);
+      font-size: 1rem;
+      line-height: 1.3;
+    }
+
+    .project-detail-link {
+      align-self: flex-start;
+      display: inline-block;
+      background-color: var(--ink);
+      color: var(--cream);
+      border: 2px solid var(--border);
+      border-radius: 999px;
+      padding: 0.55rem 1.2rem;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .project-detail-link:hover {
+      background-color: var(--coral);
+      color: var(--ink);
+    }
+
+    .skills-section {
+      background-color: var(--blue);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .skill-group {
+      background-color: var(--cream);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-hard);
+    }
+
+    .skill-group h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .skill-tag {
+      background-color: var(--cream);
+      border: 2px solid var(--border);
+      border-radius: 999px;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .skill-group:first-child .skill-tag {
+      background-color: var(--blue);
+    }
+
+    .skill-tag:hover {
+      background-color: var(--coral) !important;
+      transform: translateY(-2px);
+    }
+
+    .contact-section {
+      background-color: var(--cream);
+      border-bottom: none;
+    }
+
+    .contact-card {
+      background-color: var(--coral);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 3.25rem;
+      box-shadow: 8px 8px 0px var(--ink);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-card::after {
+      content: "";
+      position: absolute;
+      right: -35px;
+      bottom: -35px;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      background-color: var(--blue);
+      border: 2px solid var(--border);
+    }
+
+    .contact-card h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.85rem);
+      font-weight: 800;
+      line-height: 1.12;
+      max-width: 620px;
+      margin-bottom: 1rem;
+    }
+
+    .contact-card p {
+      font-size: 1.05rem;
+      max-width: 540px;
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .email-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background-color: var(--ink);
+      color: var(--cream);
+      border: 2px solid var(--border);
+      border-radius: 999px;
+      padding: 0.85rem 1.65rem;
+      font-weight: 700;
+      font-size: 0.98rem;
+      transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .email-box:hover {
+      background-color: var(--blue);
+      color: var(--ink);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      border-top: 2px solid var(--border);
+      padding: 2rem 0;
+      background-color: var(--cream);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .back-top {
+      font-weight: 700;
+      color: var(--ink);
+      border-bottom: 2px solid var(--coral);
+      padding-bottom: 2px;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(26, 29, 30, 0.65);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      z-index: 200;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .modal-overlay:target {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .modal-backdrop-close {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .modal-box {
+      position: relative;
+      z-index: 2;
+      background-color: var(--cream);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-lg);
+      max-width: 620px;
+      width: 100%;
+      padding: 2.25rem;
+      box-shadow: 10px 10px 0px var(--ink);
+      max-height: 88vh;
+      overflow-y: auto;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .modal-close {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--coral);
+      border: 2px solid var(--border);
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      font-weight: 800;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .modal-section {
+      margin-bottom: 1.15rem;
+    }
+
+    .modal-section h4 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .modal-section p {
+      font-size: 0.96rem;
+    }
+
+    .modal-footer-action {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 2px dashed var(--border);
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .about-layout,
+      .cert-grid,
+      .projects-grid,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cert-card.featured-cert {
+        grid-column: auto;
+      }
+
+      .menu-toggle-label {
+        display: inline-block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: -1.5rem;
+        right: -1.5rem;
+        background-color: var(--cream);
+        border-bottom: 2px solid var(--border);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+        gap: 1.15rem;
+      }
+
+      .nav-checkbox:checked ~ .nav-links {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card {
+        padding: 2rem 1.5rem;
+      }
+
+      section {
+        padding: 4rem 0;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="#top" class="brand">
+        <span class="brand-monogram">PK</span>
+        <span>Palak Kulhariya</span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-checkbox" />
+      <label for="nav-toggle" class="menu-toggle-label" aria-label="Toggle navigation menu">
+        <span class="label-open">Menu</span>
+        <span class="label-close">Close</span>
+      </label>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills &amp; Interests</a>
+        <a href="#contact" class="nav-cta">Get in Touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="hero-eyebrow">BBA DBE • IIM Bangalore</span>
+          <h1 class="hero-title">
+            Hi, I’m <span class="highlight">Palak</span><br />
+            Kulhariya.
+          </h1>
+          <p class="hero-lead">
+            A first-year Digital Business &amp; Entrepreneurship student exploring how businesses work on the ground—by observing customers, questioning broken workflows, and testing practical ideas.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn-primary">Explore My Projects ↓</a>
+            <a href="#about" class="btn-secondary">About My Approach</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Student Profile Summary">
+          <div class="hero-card-top">
+            <span class="dossier-label">Student Dossier</span>
+          </div>
+          <div class="hero-card-row">
+            <span class="row-key">Program</span>
+            <span class="row-val">BBA in Digital Business &amp; Entrepreneurship</span>
+          </div>
+          <div class="hero-card-row">
+            <span class="row-key">Institution</span>
+            <span class="row-val">Indian Institute of Management Bangalore</span>
+          </div>
+          <div class="hero-card-row">
+            <span class="row-key">Core Focus Areas</span>
+            <div class="focus-pills">
+              <span class="focus-pill">Customer Behaviour</span>
+              <span class="focus-pill">Market Gaps</span>
+              <span class="focus-pill">Field Research</span>
+              <span class="focus-pill">Business Models</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="container about-layout">
+        <div>
+          <span class="section-kicker kicker-coral">01 / About Me</span>
+          <h2 class="section-title">Learning business beyond textbooks.</h2>
+          <p class="about-narrative">
+            Starting my undergraduate journey in Digital Business and Entrepreneurship at IIM Bangalore has shaped how I look at everyday businesses. Rather than treating entrepreneurship as purely theoretical, I enjoy stepping outside to observe how real customers make decisions and where service workflows fall short.
+          </p>
+          <p class="about-narrative">
+            Whether it is talking to customers directly, studying how a B2B partner network operates, or sketching an early-stage solution for students, I am drawn to practical problem-solving and understanding the mechanics behind sustainable business models.
+          </p>
+          <div class="about-highlight-box">
+            <p>“Good business ideas rarely start in a vacuum—they begin by paying close attention to everyday friction.”</p>
+          </div>
+        </div>
+
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <span class="pillar-num">01</span>
+            <h3>Entrepreneurial Thinking</h3>
+            <p>Framing everyday challenges as structured opportunities for practical, user-first solutions.</p>
+          </div>
+          <div class="pillar-card">
+            <span class="pillar-num">02</span>
+            <h3>Customer Behaviour</h3>
+            <p>Observing what buyers value, what causes hesitation, and how trust shapes choices.</p>
+          </div>
+          <div class="pillar-card">
+            <span class="pillar-num">03</span>
+            <h3>Identifying Market Gaps</h3>
+            <p>Spotting mismatches between customer expectations and how existing services deliver.</p>
+          </div>
+          <div class="pillar-card">
+            <span class="pillar-num">04</span>
+            <h3>Practical Problem-Solving</h3>
+            <p>Breaking complex operational bottlenecks into clear, testable improvements.</p>
+          </div>
+          <div class="pillar-card">
+            <span class="pillar-num">05</span>
+            <h3>Exploring Business Models</h3>
+            <p>Analyzing how B2C offerings and B2B partner networks create and capture value.</p>
+          </div>
+          <div class="pillar-card">
+            <span class="pillar-num">06</span>
+            <h3>Fieldwork &amp; Exposure</h3>
+            <p>Gaining firsthand insight through company visits, live interactions, and on-ground research.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="education-section">
+      <div class="container">
+        <span class="section-kicker kicker-blue">02 / Academic Foundation</span>
+        <h2 class="section-title">Education</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="edu-card">
+              <div>
+                <h3>IIM Bangalore</h3>
+                <p class="edu-degree">BBA in Digital Business and Entrepreneurship (BBA DBE)</p>
+                <p class="edu-meta">Undergraduate coursework focused on digital business fundamentals, entrepreneurial thinking, and applied field assignments.</p>
+              </div>
+              <span class="edu-badge">First Year • Present</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="edu-card">
+              <div>
+                <h3>DAV Public School</h3>
+                <p class="edu-meta">Completed primary and secondary schooling education.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="certifications-section">
+      <div class="container">
+        <div class="cert-header">
+          <span class="section-kicker kicker-coral">03 / Continuous Learning</span>
+          <h2 class="section-title">Certifications &amp; Learning</h2>
+          <p>Structured programs and assessments building practical fluency in generative AI tools and real-world business problem-solving.</p>
+        </div>
+
+        <div class="cert-grid">
+          <article class="cert-card">
+            <div>
+              <div class="cert-top">
+                <span class="cert-org">AWS (Amazon Web Services)</span>
+              </div>
+              <h3>Foundations in Prompt Engineering</h3>
+              <p class="cert-desc">Focused on understanding core prompt engineering principles and using AI tools effectively for structured workflows and analysis.</p>
+            </div>
+          </article>
+
+          <article class="cert-card">
+            <div>
+              <div class="cert-top">
+                <span class="cert-org">GrowthSchool</span>
+                <div class="cert-badges">
+                  <span class="cert-grade">Grade: A</span>
+                </div>
+              </div>
+              <h3>Generative AI Bootcamp</h3>
+              <p class="cert-suborg">In partnership with NSDC | Skill India</p>
+              <p class="cert-desc">Explored generative AI concepts, practical business applications, and hands-on AI-based productivity tools.</p>
+            </div>
+          </article>
+
+          <article class="cert-card featured-cert">
+            <div>
+              <div class="cert-top">
+                <span class="cert-org">LIT • Litmus Test Assessment</span>
+                <div class="cert-badges">
+                  <span class="cert-grade">Overall Score: 82%</span>
+                  <span class="cert-date">7 September 2026</span>
+                </div>
+              </div>
+              <h3>Certificate of Achievement</h3>
+              <p class="cert-desc">Completed the Litmus Test assessment evaluating practical business problem-solving, customer discovery, and structured analytical thinking across real-world scenarios.</p>
+              <span class="cert-areas-label">Areas Covered</span>
+              <div class="cert-areas">
+                <span class="cert-area-pill">Problem Discovery</span>
+                <span class="cert-area-pill">Customer Validation</span>
+                <span class="cert-area-pill">Business Model Redesign</span>
+                <span class="cert-area-pill">Failure Analysis</span>
+                <span class="cert-area-pill">Process Improvement</span>
+                <span class="cert-area-pill">Business Consulting</span>
+                <span class="cert-area-pill">Trend Identification</span>
+                <span class="cert-area-pill">Opportunity Mapping</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+      <div class="container">
+        <div class="projects-header">
+          <div>
+            <span class="section-kicker kicker-coral">04 / Applied Learning</span>
+            <h2 class="section-title">Projects &amp; Fieldwork</h2>
+          </div>
+        </div>
+
+        <input type="radio" name="project-filter" id="filter-all" class="filter-radio" checked />
+        <input type="radio" name="project-filter" id="filter-venture" class="filter-radio" />
+        <input type="radio" name="project-filter" id="filter-research" class="filter-radio" />
+        <input type="radio" name="project-filter" id="filter-b2b" class="filter-radio" />
+        <input type="radio" name="project-filter" id="filter-marketing" class="filter-radio" />
+
+        <div class="filter-bar" role="group" aria-label="Filter projects by category">
+          <label for="filter-all" class="filter-label">All Projects (4)</label>
+          <label for="filter-venture" class="filter-label">Venture Concept</label>
+          <label for="filter-research" class="filter-label">Field Research</label>
+          <label for="filter-b2b" class="filter-label">B2B Model</label>
+          <label for="filter-marketing" class="filter-label">Live Marketing</label>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card" data-category="venture">
+            <div>
+              <div class="project-top">
+                <span class="project-index">01</span>
+                <span class="project-tag">Venture Concept</span>
+              </div>
+              <h3>Drift Buddy</h3>
+              <p class="project-summary">
+                A student-focused career exposure platform concept created to help young learners explore diverse career paths beyond conventional choices.
+              </p>
+              <ul class="project-bullets">
+                <li><strong>Problem Identification:</strong> Students often choose careers with limited visibility into what day-to-day roles actually involve.</li>
+                <li><strong>Solution Concept:</strong> Designed an accessible discovery experience to broaden awareness across emerging and traditional fields.</li>
+              </ul>
+            </div>
+            <a href="#modal-drift" class="project-detail-link">Read Case Study →</a>
+          </article>
+
+          <article class="project-card" data-category="research">
+            <div>
+              <div class="project-top">
+                <span class="project-index">02</span>
+                <span class="project-tag">Field Research</span>
+              </div>
+              <h3>Car Detailing Business</h3>
+              <p class="project-summary">
+                A business research and problem-solving study examining service quality and customer trust in local automotive detailing.
+              </p>
+              <ul class="project-bullets">
+                <li><strong>Gap Identified:</strong> Lack of customer transparency and accountability once a vehicle is handed over for servicing.</li>
+                <li><strong>Proposed Approach:</strong> Explored structured progress updates, clear delivery timelines, and proof-of-work visibility.</li>
+              </ul>
+            </div>
+            <a href="#modal-detailing" class="project-detail-link">Read Case Study →</a>
+          </article>
+
+          <article class="project-card" data-category="b2b">
+            <div>
+              <div class="project-top">
+                <span class="project-index">03</span>
+                <span class="project-tag">B2B Exposure</span>
+              </div>
+              <h3>ReadyAssist</h3>
+              <p class="project-summary">
+                Industry exposure study analyzing ReadyAssist’s 24/7 roadside assistance operations and B2B service network model.
+              </p>
+              <ul class="project-bullets">
+                <li><strong>Company Visit Learning:</strong> Observed how rapid-response operations coordinate mechanics, dispatch, and customer support.</li>
+                <li><strong>Business Model Insight:</strong> Understood how B2B partnerships and distributed service networks scale reliability.</li>
+              </ul>
+            </div>
+            <a href="#modal-readyassist" class="project-detail-link">Read Case Study →</a>
+          </article>
+
+          <article class="project-card" data-category="marketing">
+            <div>
+              <div class="project-top">
+                <span class="project-index">04</span>
+                <span class="project-tag">Live Marketing</span>
+              </div>
+              <h3>Single Pizza</h3>
+              <p class="project-summary">
+                A hands-on business and marketing exercise centered on direct customer engagement and real-time offer testing.
+              </p>
+              <ul class="project-bullets">
+                <li><strong>Customer Interactions:</strong> Spoke directly with buyers to understand ordering habits, price sensitivity, and preferences.</li>
+                <li><strong>Segment &amp; Promo Testing:</strong> Mapped distinct customer segments and tested promotional pitches to observe response.</li>
+              </ul>
+            </div>
+            <a href="#modal-pizza" class="project-detail-link">Read Case Study →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+      <div class="container">
+        <span class="section-kicker kicker-cream">05 / Toolkit &amp; Curiosity</span>
+        <h2 class="section-title">Skills &amp; Interests</h2>
+
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Core Skills</h3>
+            <div class="tag-cloud">
+              <span class="skill-tag">Problem Identification</span>
+              <span class="skill-tag">Customer Discovery &amp; Interviews</span>
+              <span class="skill-tag">Primary Field Research</span>
+              <span class="skill-tag">Business Model Analysis</span>
+              <span class="skill-tag">Market Segmentation</span>
+              <span class="skill-tag">Promotional Strategy Testing</span>
+              <span class="skill-tag">Structured Communication</span>
+              <span class="skill-tag">Prompt Engineering &amp; AI Tools</span>
+              <span class="skill-tag">HTML &amp; CSS Web Design</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Areas of Interest</h3>
+            <div class="tag-cloud">
+              <span class="skill-tag">Digital Business &amp; Startups</span>
+              <span class="skill-tag">Consumer Psychology</span>
+              <span class="skill-tag">Service Operations &amp; CX</span>
+              <span class="skill-tag">B2B Partner Ecosystems</span>
+              <span class="skill-tag">Career Tech &amp; EdTech</span>
+              <span class="skill-tag">Grassroots Marketing</span>
+              <span class="skill-tag">Applied Generative AI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="contact-card">
+          <h2>Let’s connect, exchange ideas, or talk business.</h2>
+          <p>
+            Whether you’d like to discuss any of my projects, share feedback on my work, or connect around entrepreneurship and student initiatives, feel free to reach out directly via email.
+          </p>
+          <div class="contact-actions">
+            <a href="mailto:kulhariyapalak404@gmail.com" class="email-box">
+              <span>Email: kulhariyapalak404@gmail.com</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p><strong>Palak Kulhariya</strong> — BBA DBE, IIM Bangalore</p>
+      <a href="#top" class="back-top">Back to Top ↑</a>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="modal-drift" role="dialog" aria-modal="true" aria-labelledby="modal-drift-title">
+    <a href="#projects" class="modal-backdrop-close" aria-label="Close modal"></a>
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <span class="section-kicker kicker-blue">Venture Concept</span>
+          <h3 id="modal-drift-title">Drift Buddy</h3>
+        </div>
+        <a href="#projects" class="modal-close" aria-label="Close modal">✕</a>
+      </div>
+      <div class="modal-section">
+        <h4>The Problem</h4>
+        <p>Many students make academic and career decisions based on a narrow set of familiar professions, without practical exposure to what different careers actually entail.</p>
+      </div>
+      <div class="modal-section">
+        <h4>The Concept</h4>
+        <p>Drift Buddy was conceptualized as a student-focused career exposure platform that helps learners explore diverse career possibilities, understand real-world roles, and discover paths aligned with their curiosity before committing blindly.</p>
+      </div>
+      <div class="modal-section">
+        <h4>Key Takeaway</h4>
+        <p>Defining the user problem clearly before jumping into features ensures the solution addresses genuine student confusion rather than surface-level information overload.</p>
+      </div>
+      <div class="modal-footer-action">
+        <a href="#projects" class="project-detail-link">Close Case Study</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-detailing" role="dialog" aria-modal="true" aria-labelledby="modal-detailing-title">
+    <a href="#projects" class="modal-backdrop-close" aria-label="Close modal"></a>
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <span class="section-kicker kicker-blue">Field Research</span>
+          <h3 id="modal-detailing-title">Car Detailing Business</h3>
+        </div>
+        <a href="#projects" class="modal-close" aria-label="Close modal">✕</a>
+      </div>
+      <div class="modal-section">
+        <h4>The Problem</h4>
+        <p>Customers handing over their vehicles for detailing often experience uncertainty around what work is actually being completed, whether timelines will hold, and how quality is verified.</p>
+      </div>
+      <div class="modal-section">
+        <h4>The Concept</h4>
+        <p>Through business research and workflow mapping, the project explored practical ways to close the transparency and accountability gap—such as milestone-based service updates, clear delivery commitments, and visible documentation of work performed.</p>
+      </div>
+      <div class="modal-section">
+        <h4>Key Takeaway</h4>
+        <p>In high-trust service businesses, customer satisfaction depends just as much on communication and visibility during the process as on the final physical outcome.</p>
+      </div>
+      <div class="modal-footer-action">
+        <a href="#projects" class="project-detail-link">Close Case Study</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-readyassist" role="dialog" aria-modal="true" aria-labelledby="modal-readyassist-title">
+    <a href="#projects" class="modal-backdrop-close" aria-label="Close modal"></a>
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <span class="section-kicker kicker-blue">B2B Exposure</span>
+          <h3 id="modal-readyassist-title">ReadyAssist</h3>
+        </div>
+        <a href="#projects" class="modal-close" aria-label="Close modal">✕</a>
+      </div>
+      <div class="modal-section">
+        <h4>The Context</h4>
+        <p>Exposure to ReadyAssist provided an inside look at how a 24/7 roadside assistance company manages urgent, location-sensitive vehicle breakdowns across cities.</p>
+      </div>
+      <div class="modal-section">
+        <h4>What I Learned</h4>
+        <p>The company visit highlighted how ReadyAssist operates through structured B2B partnerships and an organized network of trained service technicians—balancing speed, partner coordination, and consistent service standards.</p>
+      </div>
+      <div class="modal-section">
+        <h4>Key Takeaway</h4>
+        <p>Seeing a live operational floor demonstrated how B2B distribution channels and partner networks allow a service business to scale without owning every physical asset.</p>
+      </div>
+      <div class="modal-footer-action">
+        <a href="#projects" class="project-detail-link">Close Case Study</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-pizza" role="dialog" aria-modal="true" aria-labelledby="modal-pizza-title">
+    <a href="#projects" class="modal-backdrop-close" aria-label="Close modal"></a>
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <span class="section-kicker kicker-blue">Live Marketing</span>
+          <h3 id="modal-pizza-title">Single Pizza</h3>
+        </div>
+        <a href="#projects" class="modal-close" aria-label="Close modal">✕</a>
+      </div>
+      <div class="modal-section">
+        <h4>The Objective</h4>
+        <p>Apply marketing and customer discovery concepts in a real-world food retail setting by interacting directly with prospective buyers.</p>
+      </div>
+      <div class="modal-section">
+        <h4>Execution &amp; Testing</h4>
+        <p>Engaged with customers on the ground to identify distinct buyer segments, understand what triggered impulse versus planned purchases, and test different promotional messages to see what resonated.</p>
+      </div>
+      <div class="modal-section">
+        <h4>Key Takeaway</h4>
+        <p>Direct customer conversations quickly reveal which value propositions actually persuade buyers—and which assumptions need to be adjusted on the spot.</p>
+      </div>
+      <div class="modal-footer-action">
+        <a href="#projects" class="project-detail-link">Close Case Study</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
